@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:41:11 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/08 19:43:34 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/08 22:25:23 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+
+// 1 PART
 
 int		ft_isdigit(int ch);
 int		ft_isalnum(int ch);
@@ -40,4 +42,10 @@ int		ft_memcmp(const void *memptr1, const void *memptr2, size_t num);
 
 int		ft_atoi(const char *string);
 void	*ft_calloc(size_t length, size_t type_size);
+
+// 2 PART
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+
 #endif
