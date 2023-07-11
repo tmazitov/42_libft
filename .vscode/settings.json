@@ -1,8 +1,5 @@
 {
 	"files.associations": {
-		"sstream": "c",
-		"locale": "c",
-		"__locale": "c",
-		"ratio": "c"
+		"chrono": "c"
 	}
 }

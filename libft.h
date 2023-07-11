@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:41:11 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/08 22:25:23 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:14:43 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	*ft_calloc(size_t length, size_t type_size);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-
+char	**ft_split(char const *str, char ch);
+char	*ft_itoa(int n);
 #endif
