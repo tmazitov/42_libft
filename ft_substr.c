@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:47:26 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/08 22:24:46 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:20:56 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	unsigned int	str_len;
 	unsigned int	sub_len;
 
-	str_len = ft_strlen(str);
-	if (!str_len)
+	if (!str)
 		return (NULL);
+	str_len = ft_strlen(str);
 	if (start + len <= str_len)
 		sub_len = len;
 	else if (str_len - 1 < start)

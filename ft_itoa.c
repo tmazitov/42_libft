@@ -6,12 +6,11 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 13:14:32 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/11 15:39:42 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:19:29 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 #include "stdlib.h"
 
 int	calc_num_lenght(int n)
@@ -64,7 +63,7 @@ char	*ft_itoa(int n)
 // 	int num = 12356789;
 // 	printf("str: '%s'\n", ft_itoa(num));
 // }
-// } str -> *-*sof*ia*( 
+// } str -> *-*sof*ia*(
 // set -> *-(
 // }
 // }

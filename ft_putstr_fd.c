@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 18:25:24 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:19:34 by tmazitov         ###   ########.fr       */
+/*   Created: 2023/07/12 12:46:17 by tmazitov          #+#    #+#             */
+/*   Updated: 2023/07/12 13:21:31 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	dst_len;
-	size_t	src_len;
-
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_size <= dst_len)
-		return (dst_size + src_len);
-	if (dst_size - dst_len <= src_len)
-	{
-		ft_memcpy(dst + dst_len, src, dst_size - 1);
-		dst[dst_size - 1] = '\0';
-	}
-	else
-		ft_memcpy(dst + dst_len, src, src_len + 1);
-	return (src_len + dst_len);
+	if (!s || fd < 0)
+		return ;
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

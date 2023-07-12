@@ -6,12 +6,11 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:05:52 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/08 19:45:40 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:19:31 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
 size_t	ft_unsigned_strlen(const unsigned char *src)
 {

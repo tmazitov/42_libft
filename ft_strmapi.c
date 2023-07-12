@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 18:25:24 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:19:34 by tmazitov         ###   ########.fr       */
+/*   Created: 2023/07/12 11:37:49 by tmazitov          #+#    #+#             */
+/*   Updated: 2023/07/12 13:27:22 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
-	size_t	dst_len;
-	size_t	src_len;
+	int		counter;
+	int		str_lenght;
+	char	*result;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_size <= dst_len)
-		return (dst_size + src_len);
-	if (dst_size - dst_len <= src_len)
+	if (!str)
+		return (NULL);
+	str_lenght = ft_strlen(str);
+	counter = 0;
+	result = malloc(sizeof(char) * (str_lenght + 1));
+	if (!result)
+		return (NULL);
+	while (str[counter])
 	{
-		ft_memcpy(dst + dst_len, src, dst_size - 1);
-		dst[dst_size - 1] = '\0';
+		result[counter] = f(counter, str[counter]);
+		counter++;
 	}
-	else
-		ft_memcpy(dst + dst_len, src, src_len + 1);
-	return (src_len + dst_len);
+	result[counter] = '\0';
+	return (result);
 }

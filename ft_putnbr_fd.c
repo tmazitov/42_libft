@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 18:25:24 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:19:34 by tmazitov         ###   ########.fr       */
+/*   Created: 2023/07/12 12:53:53 by tmazitov          #+#    #+#             */
+/*   Updated: 2023/07/12 13:21:27 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
+void	print_nbr(int num, int fd)
 {
-	size_t	dst_len;
-	size_t	src_len;
+	int	div;
+	int	mod;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_size <= dst_len)
-		return (dst_size + src_len);
-	if (dst_size - dst_len <= src_len)
-	{
-		ft_memcpy(dst + dst_len, src, dst_size - 1);
-		dst[dst_size - 1] = '\0';
-	}
-	else
-		ft_memcpy(dst + dst_len, src, src_len + 1);
-	return (src_len + dst_len);
+	div = num / 10;
+	mod = num % 10;
+	if ((num > 0 && div > 0) || (num < 0 && div < 0))
+		print_nbr(div, fd);
+	if (mod < 0)
+		mod *= -1;
+	ft_putchar_fd('0' + mod, fd);
+}
+
+void	ft_putnbr_fd(int num, int fd)
+{
+	if (num < 0)
+		ft_putchar_fd('-', fd);
+	print_nbr(num, fd);
 }

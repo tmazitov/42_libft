@@ -6,12 +6,11 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:49:44 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/07 15:16:56 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:19:36 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

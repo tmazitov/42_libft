@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:37:22 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/11 16:00:32 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:26:42 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ int	next_str_len(char const *str, char ch)
 
 char	**ft_split(char const *str, char ch)
 {
-	int		wrd_len;
 	int		wrd_ctn;
 	int		ctn;
 	int		str_ctn;
 	char	**result;
 
-	wrd_len = calc_words_count(str, ch);
-	result = malloc((wrd_len + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	result = malloc((calc_words_count(str, ch) + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	wrd_ctn = 0;
 	str_ctn = 0;
-	while (wrd_ctn < wrd_len && str[str_ctn])
+	while (str[str_ctn])
 	{
 		if (str[str_ctn] && str[str_ctn] == ch)
 			str_ctn++;
