@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:11:44 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/08 19:31:55 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:58:58 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(char *src)
 {
-	int		src_len;
+	size_t	src_len;
 	int		counter;
 	char	*new_str;
 

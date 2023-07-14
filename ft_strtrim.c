@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 22:31:49 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/11 16:10:40 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/14 15:00:45 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		start;
+	size_t	start;
 	int		counter;
-	int		length;
+	size_t	length;
 	char	*result;
 
 	if (!s1)

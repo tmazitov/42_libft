@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:17:43 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 19:10:09 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/14 15:53:34 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	conv_to_numb(char *str)
 	counter = 0;
 	digit = 0;
 	summator = 1;
-	while (str[number_length] >= '0' && str[number_length] <= '9')
+	while (ft_isdigit(str[number_length]))
 		number_length++;
 	while (counter < number_length)
 	{
@@ -55,6 +55,8 @@ int	ft_atoi(char const *str)
 	int	sign;
 
 	sign = 1;
+	if (!ft_strlen((char *)str))
+		return (0);
 	while (is_white_space(*str) && *str)
 		str++;
 	sign = check_type(*str);
@@ -62,7 +64,7 @@ int	ft_atoi(char const *str)
 		str++;
 	if (!ft_isdigit(*str))
 		return (0);
-	if (*str >= '0' && *str <= '9')
+	if (ft_isdigit(*str))
 		return (conv_to_numb((char *)str) * sign);
 	return (0);
 }

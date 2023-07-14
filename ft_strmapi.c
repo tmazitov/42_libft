@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:37:49 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:27:22 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/14 15:00:03 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
 	int		counter;
-	int		str_lenght;
+	size_t	str_lenght;
 	char	*result;
 
 	if (!str)

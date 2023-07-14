@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:49:44 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:19:36 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/14 16:18:38 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	counter;
 	int		substr_is_same;
-	int		little_len;
+	size_t	little_len;
 
-	little_len = ft_strlen(little);
-	if (little_len == 0 || len == 0)
+	if (!*little)
 		return ((char *)big);
+	little_len = ft_strlen(little);
 	counter = 0;
 	substr_is_same = 0;
 	while (big[counter] && counter < len)

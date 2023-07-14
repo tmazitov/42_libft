@@ -6,26 +6,18 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:47:26 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:20:56 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/14 15:01:51 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdlib.h"
-
-unsigned int	min(unsigned int num1, unsigned int num2)
-{
-	if (num1 < num2)
-		return (num1);
-	return (num2);
-}
 
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
-	char			*sub_str;
-	size_t			counter;
-	unsigned int	str_len;
-	unsigned int	sub_len;
+	char	*sub_str;
+	size_t	counter;
+	size_t	str_len;
+	size_t	sub_len;
 
 	if (!str)
 		return (NULL);
