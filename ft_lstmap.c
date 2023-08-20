@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:18:35 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 19:06:07 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/07/22 20:38:29 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,8 @@ t_list	*ft_lstmap(t_list *list, void *(*f)(void *), void (*del)(void *))
 	}
 	return (res);
 }
+// old  new 
+//  1    1
+//  2    
+//  3
+//  4

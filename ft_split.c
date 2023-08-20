@@ -6,7 +6,7 @@
 /*   By: tmazitov <tmazitov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:37:22 by tmazitov          #+#    #+#             */
-/*   Updated: 2023/07/12 13:26:42 by tmazitov         ###   ########.fr       */
+/*   Updated: 2023/08/20 19:01:07 by tmazitov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,20 @@ int	next_str_len(char const *str, char ch)
 	return (counter);
 }
 
+void	skip_space(char const *str, int *index, char ch)
+{
+	while (str[*index] && str[*index] == ch)
+		(*index)++;
+}
+
+void	*free_result(char **result)
+{
+	while (*result)
+		free(*result++);
+	free(result);
+	return (NULL);
+}
+
 char	**ft_split(char const *str, char ch)
 {
 	int		wrd_ctn;
@@ -57,12 +71,13 @@ char	**ft_split(char const *str, char ch)
 	str_ctn = 0;
 	while (str[str_ctn])
 	{
-		if (str[str_ctn] && str[str_ctn] == ch)
-			str_ctn++;
+		skip_space(str, &str_ctn, ch);
 		ctn = next_str_len(str + str_ctn, ch);
 		if (ctn == 0)
 			continue ;
-		result[wrd_ctn++] = ft_substr(str, str_ctn, ctn);
+		result[wrd_ctn] = ft_substr(str, str_ctn, ctn);
+		if (!result[wrd_ctn++])
+			return (free_result(result));
 		str_ctn += ctn;
 	}
 	result[wrd_ctn] = 0;
